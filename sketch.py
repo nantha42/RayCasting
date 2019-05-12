@@ -22,6 +22,7 @@ class Display:
             y3 = np.random.randint(0, 700)
             #self.walls.append(Boundary(x1,y1,x2,y2))
             #self.walls.extend(self.box(x3,y3))
+
         #N
         self.walls.append(Boundary(10,400, 50, 250))
         self.walls.append(Boundary(50, 250, 90, 400))
@@ -41,13 +42,20 @@ class Display:
         self.walls.append(Boundary(490,250,490,400))
         self.walls.append(Boundary(570, 250, 570, 400))
         self.walls.append(Boundary(490,325,570,325))
-        
+        #A
+        d = 440
+        self.walls.append(Boundary(150+d, 400, 190+d, 250))
+        self.walls.append(Boundary(190+d, 250, 230+d, 400))
+        self.walls.append(Boundary(170+d, 330, 210+d, 330))
+        #K
+        self.walls.append(Boundary(690, 400, 690, 250))
+        self.walls.append(Boundary(690, 325, 770, 250))
+        self.walls.append(Boundary(690, 325, 770, 400))
 
-
-        self.walls.append(Boundary(0,0,700,0))
-        self.walls.append(Boundary(0, 0, 0, 700))
-        self.walls.append(Boundary(0, 700, 700, 700))
-        self.walls.append(Boundary(700, 0, 700, 700))
+        self.walls.append(Boundary(0,0,700+70,0))
+        self.walls.append(Boundary(0, 0, 0, 700+70))
+        self.walls.append(Boundary(0, 700+70, 700+70, 700+70))
+        self.walls.append(Boundary(700+70, 0, 700+70, 700+70))
         self.particle = Particle()
         self.stopgame = False
         self.clock = py.time.Clock()
@@ -60,8 +68,8 @@ class Display:
         return [w1,w2,w3,w4]
 
     def draw(self):
-        for wall in self.walls:
-           wall.show(self.win)
+        #for wall in self.walls:
+        #  wall.show(self.win)
         self.particle.show(self.win)
     def update(self):
         if self.up:
