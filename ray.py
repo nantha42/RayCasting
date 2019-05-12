@@ -9,7 +9,8 @@ class Ray:
         self.dir = array([cos(rad), sin(rad)])
 
     def show(self, surf):
-        line(surf, (255, 255, 255), self.pos, self.pos + self.dir * 10, 2)
+        #line(surf, (255, 255, 255), self.pos, self.pos + self.dir * 10, 2)
+        pass
 
     def lookAt(self, x, y):
         self.dir[0] = x - self.pos[0]
